@@ -1,0 +1,42 @@
+﻿@model IEnumerable<WebApplication1.Entities.Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="m-5">
+    <div class="header d-flex justify-content-between">
+        <h1 class="display-4">Our Products</h1>
+        <a asp-action="Create" class="text-decoration-none text-muted mt-5">Create A New Product</a>
+    </div>
+    <hr />
+
+
+    <div class="container mt-5">
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            @foreach (var item in Model)
+            {
+                <div class="col">
+
+                    <a asp-action="Details" asp-route-id="@item.Id" class="text-muted text-decoration-none">
+                        <div class="card shadow-sm p-3 bg-white rounded h-100">
+                            <img src="@Html.DisplayFor(modelItem => item.ImageUrl)" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">  @Html.DisplayFor(modelItem => item.Name)</h5>
+                                <p class="card-desc"> @Html.DisplayFor(modelItem => item.Shorts)</p>
+                                <div class="d-flex justify-content-center justify-content-around mt-4">
+                                    <p class="text-danger h4 mt-1">  @Html.DisplayFor(modelItem => item.Price):-</p>
+                                    <div class="btn btn-outline-dark p-2">Add to cart</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+            }
+
+
+        </div>
+    </div>
+</div>
+

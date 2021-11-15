@@ -1,0 +1,41 @@
+﻿@model WebApplication1.Entities.Product
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="m-5">
+    <h1 class="display-4 mt-5">@Html.DisplayFor(model => model.Name)</h1>
+
+    <hr />
+
+
+    <div class="card mb-3 mt-5">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="@Html.DisplayFor(model => model.ImageUrl)" class="img-fluid mb-5" alt="...">
+            </div>
+            <div class="col-md-8 d-flex justify-content-center align-items-center">
+                <div class="card-body">
+                    <h5 class="card-title">@Html.DisplayFor(model => model.Name)</h5>
+                    <p class="card-desc col-10">@Html.DisplayFor(model => model.Description)</p>
+                    <div class="mt-4">
+                        <p class="text-danger h4 mt-1">@Html.DisplayFor(model => model.Price):-</p>
+                        <div class="btn btn-dark mt-4">Add to cart</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <dl class="row">
+
+
+
+    </dl>
+
+    <div>
+        <a asp-action="Index" class="text-muted text-decoration-none">Back to Products</a>
+    </div>
+</div>
+
+
